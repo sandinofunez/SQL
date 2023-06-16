@@ -1,0 +1,31 @@
+CREATE TABLE clothes (id INTEGER PRIMARY KEY, item TEXT,price INTEGER, color TEXT, size TEXT,stock INTEGER);
+
+
+INSERT INTO clothes (id,item,price,color,size,stock) VALUES
+(1,"shirt",20.99,"red","medium",5),
+(2,"pants", 15.98,"blue","large",6),
+(3,"short",10.00, "green","small",10),
+(4,"dress",50.00, "pink", "medium",2),
+(5,"top",25.99,"orange", "Large", 9),
+(6,"skort",13.98,"purple","Small",6),
+(7,"hat",8.99,"burgandy","Medium",20),
+(8,"glove",4.98,"red","one size",12),
+(9,"tie",15.00,"brown","one size",45),
+(10,"slippers",25.00,"grey","large",12),
+(11,"sandals",15.99,"blue","medium",28),
+(12,"scarf",5.99,"teal","one size",15),
+(13,"tank top",10.25,"pink","small",23),
+(14,"hand bag",55.99,"beige","Large",10),
+(15,"leggins",35.99,"blue","larg",1);
+
+
+SELECT * FROM clothes;
+
+--display the database order by price
+SELECT * FROM clothes ORDER BY price desc;
+
+--display the database by item color and amount
+SELECT color,COUNT(*) FROM clothes GROUP BY color;
+
+--display items with high stock of grater than 10
+SELECT * FROM clothes WHERE stock > 10;
